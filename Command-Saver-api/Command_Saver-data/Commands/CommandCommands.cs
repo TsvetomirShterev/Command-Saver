@@ -2,7 +2,7 @@
 {
     using Command_Saver_data.Models;
 
-    public class CommandCommands : ICommndCommands
+    public class CommandCommands : ICommandCommands
     {
         private readonly CommandSaverDbContext commandSaverDbContext;
 

@@ -10,7 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FakeItEasy" Version="7.3.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="System.Text.Json" Version="6.0.5" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -26,6 +28,11 @@
     <ProjectReference Include="..\Command-Saver-api\Command-Saver-api.csproj" />
     <ProjectReference Include="..\Command-Saver-service\Command-Saver-service.csproj" />
     <ProjectReference Include="..\Command_Saver-data\Command_Saver-data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Data\" />
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,11 @@
 ﻿namespace Command_Saver_service.Services
 {
+    using Command_Saver_data.Models;
     using Command_Saver_service.DTO;
 
     public interface ICommandService
     {
-        CreateCommandModel CreateCommand(CreateCommandModel createCommandRequest);
+        Command CreateCommand(CreateCommandModel createCommandRequest);
 
         ICollection<ReadCommandModel> GetAllCommands();
 

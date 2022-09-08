@@ -31,7 +31,7 @@ builder
 
 builder.Services.AddScoped<ICommandQueries, CommandQueries>();
 
-builder.Services.AddScoped<ICommndCommands, CommandCommands>();
+builder.Services.AddScoped<ICommandCommands, CommandCommands>();
 
 builder.Services.AddScoped<IPlatformQueries, PlatformQueries>();
 

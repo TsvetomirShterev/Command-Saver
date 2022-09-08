@@ -10,12 +10,12 @@
 
     public class CommandService : ICommandService
     {
-        private readonly ICommndCommands commndCommands;
+        private readonly ICommandCommands commndCommands;
         private readonly ICommandQueries commandQueries;
         private readonly IPlatformQueries platformQueries;
         private readonly IMapper mapper;
 
-        public CommandService(ICommandQueries commandQueries, ICommndCommands commndCommands, IMapper mapper, IPlatformQueries platformQueries)
+        public CommandService(ICommandQueries commandQueries, ICommandCommands commndCommands, IMapper mapper, IPlatformQueries platformQueries)
         {
             this.commandQueries = commandQueries;
             this.commndCommands = commndCommands;
@@ -23,7 +23,7 @@
             this.platformQueries = platformQueries;
         }
 
-        public CreateCommandModel CreateCommand(CreateCommandModel createCommandRequest)
+        public Command CreateCommand(CreateCommandModel createCommandRequest)
         {
             var command = mapper.Map<Command>(createCommandRequest);
 
@@ -41,7 +41,7 @@
 
             var result = commndCommands.CreateCommand(command);
 
-            return mapper.Map<CreateCommandModel>(result);
+            return result;
         }
 
 

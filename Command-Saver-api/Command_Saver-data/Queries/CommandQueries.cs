@@ -26,7 +26,11 @@
 
         public Command GetCommandById(int id)
         {
-            var command = commandSaverDbContext.Commands.FirstOrDefault(c => c.Id == id);
+            var command = commandSaverDbContext
+                .Commands
+                .Include(c => c.Platforms)
+                    .ThenInclude(p => p.Platform)
+                .FirstOrDefault(c => c.Id == id);
 
             return command;
         }

@@ -2,7 +2,7 @@
 {
     using Command_Saver_data.Models;
 
-    public interface ICommndCommands
+    public interface ICommandCommands
     {
         Command CreateCommand(Command command);
     }
