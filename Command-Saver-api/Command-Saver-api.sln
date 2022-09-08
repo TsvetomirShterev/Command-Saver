@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command-Saver-api", "Command-Saver-api\Command-Saver-api.csproj", "{F6DF31A8-ED70-440B-A1D3-AABE39699CDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Command-Saver-api", "Command-Saver-api\Command-Saver-api.csproj", "{F6DF31A8-ED70-440B-A1D3-AABE39699CDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command_Saver-data", "Command_Saver-data\Command_Saver-data.csproj", "{575DA2AE-7BCD-4CE9-8905-A0F2C992D171}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command-Saver-service", "Command-Saver-service\Command-Saver-service.csproj", "{075C3C62-FA29-4F44-82E0-4429EC13C26E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command-Saver-Test", "Command-Saver-Test\Command-Saver-Test.csproj", "{E83B280C-ABE3-46E8-B64F-23DFB4A91C06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{F6DF31A8-ED70-440B-A1D3-AABE39699CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6DF31A8-ED70-440B-A1D3-AABE39699CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6DF31A8-ED70-440B-A1D3-AABE39699CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{575DA2AE-7BCD-4CE9-8905-A0F2C992D171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{575DA2AE-7BCD-4CE9-8905-A0F2C992D171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{575DA2AE-7BCD-4CE9-8905-A0F2C992D171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{575DA2AE-7BCD-4CE9-8905-A0F2C992D171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{075C3C62-FA29-4F44-82E0-4429EC13C26E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{075C3C62-FA29-4F44-82E0-4429EC13C26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{075C3C62-FA29-4F44-82E0-4429EC13C26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{075C3C62-FA29-4F44-82E0-4429EC13C26E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E83B280C-ABE3-46E8-B64F-23DFB4A91C06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E83B280C-ABE3-46E8-B64F-23DFB4A91C06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E83B280C-ABE3-46E8-B64F-23DFB4A91C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E83B280C-ABE3-46E8-B64F-23DFB4A91C06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

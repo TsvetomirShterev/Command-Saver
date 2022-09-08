@@ -1,15 +1,45 @@
+using AutoMapper;
+using Command_Saver_data;
+using Command_Saver_data.Commands;
+using Command_Saver_data.Queries;
+using Command_Saver_service.Profiles;
+using Command_Saver_service.Services;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var connectionString = builder
+    .Configuration
+    .GetConnectionString("DefaultConnection");
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var config = new MapperConfiguration(config =>
+{
+    config.AddProfile(new CommandsProfile());
+});
+
+var mapper = config.CreateMapper();
+builder.Services.AddSingleton(mapper);
+
+builder
+    .Services
+    .AddDbContext<CommandSaverDbContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<ICommandQueries, CommandQueries>();
+
+builder.Services.AddScoped<ICommndCommands, CommandCommands>();
+
+builder.Services.AddScoped<IPlatformQueries, PlatformQueries>();
+
+builder.Services.AddScoped<ICommandService, CommandService>();
+
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
