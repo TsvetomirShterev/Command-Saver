@@ -1,6 +1,7 @@
 ﻿namespace Command_Saver_data.Queries
 {
     using Command_Saver_data.Models;
+    using Microsoft.EntityFrameworkCore;
     using System.Collections.Generic;
 
     public class CommandQueries : ICommandQueries
@@ -14,7 +15,11 @@
 
         public ICollection<Command> GetAllCommands()
         {
-            var allCommands = commandSaverDbContext.Commands.ToArray();
+            var allCommands = commandSaverDbContext
+                .Commands
+                .Include(c => c.Platforms)
+                    .ThenInclude(p => p.Platform)
+                .ToArray();
 
             return allCommands;
         }
