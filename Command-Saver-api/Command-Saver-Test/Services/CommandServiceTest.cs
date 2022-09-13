@@ -76,5 +76,44 @@
             Assert.NotNull(result);
             Assert.Equal(readCommandModels, result);
         }
+
+        [Fact]
+        public void GetCommandById_ShouldGet_CommandWithId_IfIdExists()
+        {
+            //Arrange
+            var bookId = 5;
+
+            SetupService();
+
+            A.CallTo(() => commandQueries.GetCommandById(A<int>.Ignored))
+                .Returns(new Command());
+
+            //Act
+            var result = commandService.GetCommandById(bookId);
+
+            //Assert
+            Assert.NotNull(result);
+            A.CallTo(() => commandQueries.GetCommandById(bookId))
+                .MustHaveHappenedOnceExactly();
+        }
+
+        [Fact]
+        public void GetCommandById_ShouldGet_CommandWithId_IfIdDoesNotExists()
+        {
+            //Arrange
+            var bookId = 5;
+
+            SetupService();
+
+            A.CallTo(() => commandQueries.GetCommandById(A<int>.Ignored))
+                .Returns(null);
+
+            //Act
+            var result = commandService.GetCommandById(bookId);
+
+            //Assert
+            A.CallTo(() => commandQueries.GetCommandById(bookId))
+                .MustHaveHappened();
+        }
     }
 }

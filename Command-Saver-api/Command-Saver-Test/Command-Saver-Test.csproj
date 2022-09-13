@@ -31,8 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Data\" />
+    <Folder Include="Data\Queries\" />
   </ItemGroup>
 
 </Project>

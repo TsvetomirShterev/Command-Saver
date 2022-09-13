@@ -30,7 +30,7 @@
 
 
         [HttpGet]
-        public ActionResult<ReadCommandModel> GetAllCommands()
+        public ActionResult<ICollection<ReadCommandModel>> GetAllCommands()
         {
             var commands = commandService.GetAllCommands();
 
