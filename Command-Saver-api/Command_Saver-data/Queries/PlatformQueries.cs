@@ -15,7 +15,6 @@
         {
             var existingGenres = commandSaverDbContext.Platforms
            .Where(p => platforms.Contains(p.Name))
-           //.Select(p => p)
            .ToList();
 
             return existingGenres;

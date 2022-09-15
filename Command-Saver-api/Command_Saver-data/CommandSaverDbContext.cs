@@ -5,17 +5,22 @@
 
     public class CommandSaverDbContext : DbContext
     {
+        public CommandSaverDbContext()
+        {
+
+        }
+
         public CommandSaverDbContext(DbContextOptions<CommandSaverDbContext> options)
             : base(options)
         {
 
         }
 
-        public DbSet<Command> Commands { get; set; }
+        public virtual DbSet<Command> Commands { get; set; }
 
-        public DbSet<CommandPlatform> CommandPlatforms { get; set; }
+        public virtual DbSet<CommandPlatform> CommandPlatforms { get; set; }
 
-        public DbSet<Platform> Platforms { get; set; }
+        public virtual DbSet<Platform> Platforms { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

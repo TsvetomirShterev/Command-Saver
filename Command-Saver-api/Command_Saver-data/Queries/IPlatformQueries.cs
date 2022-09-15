@@ -4,7 +4,7 @@
 
     public interface IPlatformQueries
     {
-        public List<Platform> GetExistingPlatforms(IEnumerable<string> platforms);
+        List<Platform> GetExistingPlatforms(IEnumerable<string> platforms);
 
         List<string> GetNewPlatforms(IEnumerable<string> platforms, List<Platform> existingPlatforms);
     }
