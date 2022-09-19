@@ -1,6 +1,7 @@
 ﻿namespace Command_Saver_data.Queries
 {
     using Command_Saver_data.Models;
+    using Microsoft.EntityFrameworkCore;
     using System.Collections.Generic;
 
     public class PlatformQueries : IPlatformQueries
@@ -9,6 +10,17 @@
         public PlatformQueries(CommandSaverDbContext commandSaverDbContext)
         {
             this.commandSaverDbContext = commandSaverDbContext;
+        }
+
+        public ICollection<Platform> GetAllPlatforms()
+        {
+            var allPlatforms = commandSaverDbContext
+                .Platforms
+                .Include(p => p.Commands)
+                    .ThenInclude(c => c.Command)
+                .ToArray();
+
+            return allPlatforms;
         }
 
         public List<Platform> GetExistingPlatforms(IEnumerable<string> platforms)

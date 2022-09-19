@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Command_Saver_data.Migrations
 {
     [DbContext(typeof(CommandSaverDbContext))]
-    [Migration("20220907090151_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220919075257_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

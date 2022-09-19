@@ -20,6 +20,7 @@ builder.Services.AddSwaggerGen();
 var config = new MapperConfiguration(config =>
 {
     config.AddProfile(new CommandsProfile());
+    config.AddProfile(new PlatformsProfile());
 });
 
 var mapper = config.CreateMapper();
@@ -33,9 +34,13 @@ builder.Services.AddScoped<ICommandQueries, CommandQueries>();
 
 builder.Services.AddScoped<ICommandCommands, CommandCommands>();
 
+builder.Services.AddScoped<ICommandService, CommandService>();
+
+builder.Services.AddScoped<IPlatformCommands, PlatformCommands>();
+
 builder.Services.AddScoped<IPlatformQueries, PlatformQueries>();
 
-builder.Services.AddScoped<ICommandService, CommandService>();
+builder.Services.AddScoped<IPlatformService, PlatformService>();
 
 
 var app = builder.Build();

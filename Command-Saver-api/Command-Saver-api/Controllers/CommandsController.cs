@@ -16,7 +16,7 @@
         }
 
         [HttpPost]
-        public ActionResult<CreateCommandModel> CreateCommand(CreateCommandModel createCommandRequest)
+        public ActionResult<CreateCommandModel> CreateCommand([FromForm] CreateCommandModel createCommandRequest)
         {
             var createdCommand = commandService.CreateCommand(createCommandRequest);
 
