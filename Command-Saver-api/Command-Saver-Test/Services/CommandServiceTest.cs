@@ -81,7 +81,7 @@
         public void GetCommandById_ShouldGet_CommandWithId_IfIdExists()
         {
             //Arrange
-            var bookId = 5;
+            var commandId = 5;
 
             SetupService();
 
@@ -89,11 +89,11 @@
                 .Returns(new Command());
 
             //Act
-            var result = commandService.GetCommandById(bookId);
+            var result = commandService.GetCommandById(commandId);
 
             //Assert
             Assert.NotNull(result);
-            A.CallTo(() => commandQueries.GetCommandById(bookId))
+            A.CallTo(() => commandQueries.GetCommandById(commandId))
                 .MustHaveHappenedOnceExactly();
         }
 
@@ -101,7 +101,7 @@
         public void GetCommandById_ShouldGet_CommandWithId_IfIdDoesNotExists()
         {
             //Arrange
-            var bookId = 5;
+            var commandId = 5;
 
             SetupService();
 
@@ -109,10 +109,10 @@
                 .Returns(null);
 
             //Act
-            var result = commandService.GetCommandById(bookId);
+            var result = commandService.GetCommandById(commandId);
 
             //Assert
-            A.CallTo(() => commandQueries.GetCommandById(bookId))
+            A.CallTo(() => commandQueries.GetCommandById(commandId))
                 .MustHaveHappened();
         }
     }
