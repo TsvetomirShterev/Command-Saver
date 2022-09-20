@@ -29,19 +29,24 @@
         }
 
         [HttpGet]
-        public ActionResult<ReadPlatformModel> GetAllPlatforms()
+        public ActionResult<ICollection<ReadPlatformModel>> GetAllPlatforms()
         {
             var allPlatforms = platformService.GetAllPlatforms();
 
             return Ok(allPlatforms);
         }
 
-        [HttpGet("{commandId}", Name = "GetCommandById")]
-        public ActionResult<ReadPlatformModel> GetAllPlatforms()
+        [HttpGet("{platformId}", Name = "GetPlatformById")]
+        public ActionResult<ReadPlatformModel> GetPlatformById(int platformId)
         {
-            var allPlatforms = platformService.GetAllPlatforms();
+            var platform = platformService.GetPlatformById(platformId);
 
-            return Ok(allPlatforms);
+            if (platform is null)
+            {
+                return NotFound();
+            }
+
+            return Ok(platform);
         }
     }
 }

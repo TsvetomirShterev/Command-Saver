@@ -30,8 +30,4 @@
     <ProjectReference Include="..\Command_Saver-data\Command_Saver-data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\Queries\" />
-  </ItemGroup>
-
 </Project>

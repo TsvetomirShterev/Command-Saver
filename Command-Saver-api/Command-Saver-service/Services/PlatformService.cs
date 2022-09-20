@@ -6,6 +6,7 @@
     using Command_Saver_data.Queries;
     using Command_Saver_service.DTO;
     using System.Collections.Generic;
+    using System.ComponentModel.Design;
 
     public class PlatformService : IPlatformService
     {
@@ -40,7 +41,11 @@
 
         public ReadPlatformModel GetPlatformById(int platformId)
         {
-            throw new NotImplementedException();
+            var platformFromDb = platformQueries.GetPlatformById(platformId);
+
+            var platform = mapper.Map<ReadPlatformModel>(platformFromDb);
+
+            return platform;
         }
     }
 }

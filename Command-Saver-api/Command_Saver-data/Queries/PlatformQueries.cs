@@ -23,6 +23,18 @@
             return allPlatforms;
         }
 
+        public Platform GetPlatformById(int id)
+        {
+            var platform = commandSaverDbContext
+               .Platforms
+               .Include(p => p.Commands)
+                   .ThenInclude(c => c.Command)
+               .ToArray()
+               .FirstOrDefault(p => p.Id == id);
+
+            return platform;
+        }
+
         public List<Platform> GetExistingPlatforms(IEnumerable<string> platforms)
         {
             var existingGenres = commandSaverDbContext.Platforms

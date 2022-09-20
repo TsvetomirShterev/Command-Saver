@@ -78,15 +78,15 @@
         public void GetCommandById_ShouldReturn_OkObjectResult_WhenIdExists()
         {
             //Arrange
-            var bookId = 5;
+            var commandId = 5;
 
-            A.CallTo(() => commandService.GetCommandById(bookId))
-                .Returns(new ReadCommandModel() { Id = bookId });
+            A.CallTo(() => commandService.GetCommandById(commandId))
+                .Returns(new ReadCommandModel() { Id = commandId });
 
             SetupController();
 
             //Act
-            var result = commandsController.GetCommandById(bookId);
+            var result = commandsController.GetCommandById(commandId);
 
             //Assert
             Assert.NotNull(result);
@@ -98,15 +98,15 @@
         public void GetCommandById_ShouldReturn_NotFound_WhenId_DoesNotExist()
         {
             //Arrange
-            var bookId = 5;
+            var commandId = 5;
 
-            A.CallTo(() => commandService.GetCommandById(bookId))
+            A.CallTo(() => commandService.GetCommandById(commandId))
                 .Returns(null);
 
             SetupController();
 
             //Act
-            var result = commandsController.GetCommandById(bookId);
+            var result = commandsController.GetCommandById(commandId);
 
             //Assert
             Assert.IsType<NotFoundResult>(result.Result);
