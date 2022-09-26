@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   public title = 'Command-Saver-ui';
-  public collapse = true;
+  public collapse = false;
   public innerWidth = window.innerWidth;
 
   ngOnInit(): void {
