@@ -8,6 +8,8 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HamburgerToggleDirective } from './directives/hamburger-toggle.directive';
 import { HomeComponent } from './components/home/home.component';
+import { PlatformsComponent } from './components/platforms/platforms.component';
+import { PlatformCardComponent } from './components/platforms/platform-card/platform-card.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { HomeComponent } from './components/home/home.component';
     SideMenuComponent,
     HamburgerToggleDirective,
     HomeComponent,
+    PlatformsComponent,
+    PlatformCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
